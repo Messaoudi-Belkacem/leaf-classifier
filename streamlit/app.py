@@ -48,8 +48,7 @@ class SmallCNN(nn.Module):
 
 @st.cache_resource
 def load_model():
-    model = SmallCNN(num_classes=2)
-    model.load_state_dict(torch.load('custom_model.pth', map_location=device))
+    model = torch.load('custom_model.pth', map_location=device, weights_only=False)
     model.to(device)
     model.eval()
     return model
