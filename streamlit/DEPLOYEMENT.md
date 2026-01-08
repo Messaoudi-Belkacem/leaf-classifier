@@ -3,13 +3,15 @@
 ## Local Deployment
 
 1. **Install dependencies:**
+
    ```bash
-   pip install -r requirements.txt
+   pip install -r streamlit/requirements.txt
    ```
 
 2. **Run the app:**
+
    ```bash
-   streamlit run app.py
+   streamlit run streamlit/app.py
    ```
 
 3. **Access the app:**
@@ -18,18 +20,21 @@
 ## Streamlit Cloud Deployment
 
 1. **Push code to GitHub:**
-   - Ensure `app.py`, `requirements.txt`, and `custom_model.pth` are in your repo
+
+   - Ensure `streamlit/app.py`, `streamlit/requirements.txt`, and `custom_model.pth` are in your repo
 
 2. **Deploy on Streamlit Cloud:**
+
    - Go to [share.streamlit.io](https://share.streamlit.io)
    - Click "New app"
    - Select your repository: `Messaoudi-Belkacem/leaf-classifier`
-   - Set main file path: `app.py`
+   - Set main file path: `streamlit/app.py`
    - Click "Deploy"
 
 3. **Important Notes:**
    - Your model file (`custom_model.pth`) must be in the repository
    - If the file is too large for GitHub (>100MB), consider using Git LFS or storing it elsewhere
+   - The app loads the model via a relative path (`custom_model.pth`). Keep it at the repo root, or update the path in `streamlit/app.py`.
 
 ## Troubleshooting
 
